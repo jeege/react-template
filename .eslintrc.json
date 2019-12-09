@@ -1,0 +1,7 @@
+{
+  "extends": ["eslint:recommended","react-app"],
+  "globals": {},
+  "rules": {
+    "no-useless-computed-key": 0
+  }
+}
