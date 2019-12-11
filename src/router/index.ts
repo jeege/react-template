@@ -1,9 +1,19 @@
+import Login from '@/pages/Login/Index';
+import userRoutes from './routes/user';
 
-import Layout from '@/components/public/Layout'
-
-const router = {
-  path: '/',
-  component: () => import(Layout)
+export interface routeConfig {
+  path?: string;
+  component?: React.ComponentType | React.JSXElementConstructor<any>;
+  children?: routeConfig[];
+  [propName: string]: any;
 }
 
-export default router
+const routes:routeConfig[] = [
+  ...userRoutes,
+  {
+    path: '/login',
+    component: Login
+  }
+];
+
+export default routes;

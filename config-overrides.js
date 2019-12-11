@@ -2,14 +2,13 @@ const { override, fixBabelImports, addLessLoader, addWebpackAlias } = require('c
 const path = require("path");
 
 module.exports = override(
+  addWebpackAlias({
+    ['@']: path.join(__dirname, 'src')
+  }),
   fixBabelImports('import', {
     libraryName: 'antd',
     libraryDirectory: 'es',
     style: true,
-  }),
-  //添加别名
-  addWebpackAlias({
-    ['@']: path.join(__dirname, 'src')
   }),
   // 自定义主题
   addLessLoader({

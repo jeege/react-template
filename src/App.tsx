@@ -1,14 +1,14 @@
 import React from 'react';
-import { Router, Route } from 'react-router'
-import { createBrowserHistory } from "history";
-import routes from './router/index'
-
-const history = createBrowserHistory();
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import routes from '@/router/index';
+import RouteControl from '@/components/public/RouteControl';
 
 const App: React.FC = () => {
   return (
-    <Router history={history}>
-      <Route></Route>
+    <Router>
+      <Switch>
+        <RouteControl routes={routes}></RouteControl>
+      </Switch>
     </Router>
   );
 };
