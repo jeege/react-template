@@ -13,7 +13,7 @@ const Index = (props: RouterControlProps) => {
   const { pathname } = location;
   const targetRoute = routes.find((r: routeConfig) => r.path === pathname);
   if (targetRoute) {
-    //真正的页面组件
+    //页面组件
     const Component = targetRoute.component ? (
       <targetRoute.component></targetRoute.component>
     ) : null;
